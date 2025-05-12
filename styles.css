@@ -1,0 +1,312 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0B192C; /* Dark blue background */
+    color: #FFFFFF; /* White text for contrast */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #0B192C; /* Dark blue */
+    color: #FFFFFF; /* White text */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1475px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-image {
+    flex: 1; /* Allow images to take up equal space */
+    max-width: 200px; /* Adjust as needed */
+}
+
+.header-image img {
+    width: 130%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop-out effect */
+}
+
+/* Tilt Left Image */
+.header-image.left img {
+    transform: rotate(-10deg); /* Tilt left */
+}
+
+/* Tilt and Scale Right Image */
+.header-image.right img {
+    transform: rotate(10deg) scale(1.1); /* Tilt right and scale up */
+}
+
+/* Pop-out Effect on Hover */
+.header-image img:hover {
+    transform: scale(1.1) rotate(0deg); /* Pop out and remove tilt on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.header-center {
+    flex: 2; /* Center content takes more space */
+    text-align: center;
+    padding: 0 20px; /* Add some spacing */
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif; /* Bold and eye-catching font */
+    font-size: 4rem; /* Large size for emphasis */
+    margin: 0;
+    color: #FF6500; /* Orange for the main heading */
+    letter-spacing: 2px; /* Add spacing between letters for a modern look */
+}
+
+header h2 {
+    font-family: 'Oswald', sans-serif; /* Stylish and slightly softer font */
+    font-size: 2.5rem; /* Smaller than h1 but still prominent */
+    margin: 10px 0;
+    color: #FF6500; /* Orange for the subheading */
+    font-weight: 500; /* Medium weight for a clean look */
+    text-transform: uppercase; /* Uppercase for a title-like feel */
+}
+
+header p {
+    font-size: 1.1rem;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #FFFFFF; /* White text */
+}
+
+/* Music Content Section */
+.music-content {
+    background-color: #F5F5F5; /* Light gray background */
+    padding: 40px 0;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.music-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0B192C; /* Dark blue for the heading */
+}
+
+.music-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0B192C; /* Dark blue for the subheading */
+}
+
+.song-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.song-list li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #FFFFFF; /* White background for list items */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative; /* Potrebno za pozicioniranje drop-down menija */
+    cursor: pointer;
+}
+
+.song-list li:hover {
+    background-color: #E0E0E0; /* Light gray on hover */
+}
+
+.song-list li span {
+    color: #0B192C; /* Dark blue for song names */
+    font-weight: 600; /* Bold text for better visibility */
+}
+
+.icon-container {
+    width: 40px;
+    height: 40px;
+    background-color: #FF6500; /* Orange for the icon container */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.icon-container:hover {
+    background-color: #E55B00; /* Darker orange on hover */
+}
+
+.icon-container i {
+    color: #FFFFFF; /* White icon */
+    font-size: 1.2rem;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Skrij drop-down meni na začetku */
+    position: absolute;
+    top: 100%; /* Postavi drop-down meni pod pesem */
+    left: 0;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1; /* Zagotovi, da je drop-down meni na vrhu */
+}
+
+.dropdown-content a {
+    color: #0B192C;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #E0E0E0;
+}
+
+.song-list li:hover .dropdown-content {
+    display: block; /* Prikaži drop-down meni ob hoverju */
+}
+
+/* Social Media Section */
+.social-media {
+    background-image: url('stagelights.jpg'); /* Stage lights background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    padding: 80px 0; /* Increase padding for better spacing */
+    text-align: center;
+    color: #FFFFFF; /* White text for contrast */
+}
+
+.social-media h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* White text for the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for better readability */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 3rem;
+    color: #FFFFFF; /* White icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge icons on hover */
+}
+
+/* YouTube Icon */
+.social-icon.fa-youtube:hover {
+    color: #FF0000; /* Red for YouTube */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0B192C; /* Dark blue background */
+    color: #FFFFFF; /* White text */
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .subscribe h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #FF6500; /* Orange for the heading */
+}
+
+footer .subscribe input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+footer .subscribe button {
+    padding: 10px 20px;
+    background-color: #FF6500; /* Orange button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer .subscribe button:hover {
+    background-color: #E55B00; /* Darker orange on hover */
+}
+
+footer .contact h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #FF6500; /* Orange for the heading */
+}
+
+footer .contact p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+footer .contact a {
+    color: #FF6500; /* Orange links */
+    text-decoration: none;
+}
+
+footer .contact a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    .song-list li {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .subscribe input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    footer .subscribe button {
+        width: 100%;
+    }
+}
