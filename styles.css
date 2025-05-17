@@ -27,7 +27,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1475px;
+    max-width: 1375px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -38,7 +38,7 @@ header {
 }
 
 .header-image img {
-    width: 130%;
+    width: 125%;
     height: auto;
     border-radius: 10px; /* Optional: Add rounded corners */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop-out effect */
@@ -52,6 +52,7 @@ header {
 /* Tilt and Scale Right Image */
 .header-image.right img {
     transform: rotate(10deg) scale(1.1); /* Tilt right and scale up */
+    margin-left: -48px;
 }
 
 /* Pop-out Effect on Hover */
